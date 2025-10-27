@@ -3,9 +3,10 @@ name = "LinkAutoPostAI"
 version = "0.1.0"
 description = "Automated LinkedIn post generator powered by AI for seamless content scheduling and sharing."
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.12"
 dependencies = [
     "langchain[google-genai]>=1.0.2",
     "load-dotenv>=0.1.0",
     "requests>=2.32.5",
+    "types-requests>=2.32.4.20250913",
 ]
