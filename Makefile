@@ -1,34 +1,32 @@
-#***************************************************************************************
-# * File: Makefile
-# * Author: Vatsal Gupta
-# * Date: 26-Sep-2025
-# * Description: Makefile for managing the GenAI application.
-# **************************************************************************************/
+# Makefile for managing the project
+# include .env
+# export
 
-#***************************************************************************************
-# * License
-# **************************************************************************************/
-# This file is licensed under the Apache 2.0 License.
-# License information should be updated as necessary.
-
-#***************************************************************************************
-# * Variables
-# **************************************************************************************/
 SRC_DIR := src
+UV_RUN_CMD=uv run --directory $(SRC_DIR)
 
-#***************************************************************************************
-# * Targets
-# **************************************************************************************/
-.PHONY: all run test clean
+.PHONY: all env run test clean
 
-all: sync run
+all: env clean run
 
-sync:
-	@uv sync
-run: sync
-	@uv run --directory $(SRC_DIR) streamlit run app.py --browser.gatherUsageStats false
-test: sync
+# Freeze environment to requirements.txt
+env-freeze:
+	@uv pip freeze > requirements.txt
+
+# Set up environment and build project
+env:
+	@uv sync --no-cache
+
+# Run the app
+run:
+	@${UV_RUN_CMD} app.py
+
+# Test the app
+test:
 	@echo "No tests available currently."
-# 	@uv test
+	@exit 0
+
+# Clean environment and remove .venv
 clean:
 	@uv clean
+	@rm -rf .venv
