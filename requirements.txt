@@ -28,6 +28,7 @@ load-dotenv==0.1.0
 orjson==3.11.4
 ormsgpack==1.11.0
 packaging==25.0
+pip==25.3
 proto-plus==1.26.1
 protobuf==6.33.0
 pyasn1==0.6.1
