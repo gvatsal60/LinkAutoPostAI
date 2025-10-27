@@ -20,26 +20,26 @@ def post_content(access_token: str, author_urn: str, message: str) -> None:
 
     req_timeout = 10  # seconds
 
-    url = "https://api.linkedin.com/v2/ugcPosts"
+    url = 'https://api.linkedin.com/v2/ugcPosts'
 
     headers = {
-        "Authorization": f"Bearer {access_token}",
-        "X-Restli-Protocol-Version": "2.0.0",
-        "Content-Type": "application/json"
+        'Authorization': f"Bearer {access_token}",
+        'X-Restli-Protocol-Version': '2.0.0',
+        'Content-Type': 'application/json'
     }
 
     payload = {
-        "author": author_urn,
-        "lifecycleState": "PUBLISHED",
-        "specificContent": {
-            "com.linkedin.ugc.ShareContent": {
-                "shareCommentary": {
-                    "text": message
+        'author': author_urn,
+        'lifecycleState': 'PUBLISHED',
+        'specificContent': {
+            'com.linkedin.ugc.ShareContent': {
+                'shareCommentary': {
+                    'text': message
                 },
-                "shareMediaCategory": "NONE"
+                'shareMediaCategory': 'NONE'
             }
         },
-        "visibility": {"com.linkedin.ugc.MemberNetworkVisibility": "PUBLIC"}
+        'visibility': {'com.linkedin.ugc.MemberNetworkVisibility': 'PUBLIC'}
     }
 
     resp = requests.post(
@@ -50,7 +50,7 @@ def post_content(access_token: str, author_urn: str, message: str) -> None:
     )
 
     if resp.status_code != HTTPStatus.CREATED:
-        print("Error posting content to LinkedIn:", resp.status_code, resp.text)
+        print('Error posting content to LinkedIn:', resp.status_code, resp.text)
         exit(1)
 
 
@@ -87,13 +87,13 @@ def generate_linkedin_post(model_name: str, api_key: str) -> str:
     return response.content
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     # Set your API key
     try:
-        API_KEY = get_env_variable("MODEL_API_KEY")
-        MODEL_NAME = get_env_variable("MODEL_NAME")
-        ACCESS_TOKEN = get_env_variable("LINKEDIN_ACCESS_TOKEN")
-        AUTHOR_URN = get_env_variable("LINKEDIN_AUTHOR_URN")
+        API_KEY = get_env_variable('MODEL_API_KEY')
+        MODEL_NAME = get_env_variable('MODEL_NAME')
+        ACCESS_TOKEN = get_env_variable('LINKEDIN_ACCESS_TOKEN')
+        AUTHOR_URN = get_env_variable('LINKEDIN_AUTHOR_URN')
     except (ImportError, EnvironmentError) as e:
         print(e)
         exit(1)
@@ -101,4 +101,4 @@ if __name__ == "__main__":
     post_content_txt = generate_linkedin_post(MODEL_NAME, API_KEY)
     # post_content(ACCESS_TOKEN, AUTHOR_URN, post_content_txt)
 
-    print("Generated LinkedIn Post Content:\n", post_content_txt)  # FIXME
+    print('Generated LinkedIn Post Content:\n', post_content_txt)  # FIXME
