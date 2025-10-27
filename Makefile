@@ -5,16 +5,16 @@
 SRC_DIR := src
 UV_RUN_CMD=uv run --directory $(SRC_DIR)
 
-.PHONY: all env run test clean
+.PHONY: all sync run test clean
 
-all: env clean run
+all: sync clean run
 
 # Freeze environment to requirements.txt
-env-freeze:
+freeze:
 	@uv pip freeze > requirements.txt
 
 # Set up environment and build project
-env:
+sync:
 	@uv sync --no-cache
 
 # Run the app
