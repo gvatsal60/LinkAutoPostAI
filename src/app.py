@@ -73,11 +73,6 @@ def main() -> None:
         model_name = get_env_variable('MODEL_NAME')
         linkedin_token = get_env_variable('LINKEDIN_ACCESS_TOKEN')
         linkedin_urn = get_env_variable('LINKEDIN_AUTHOR_URN')
-
-        print('Environment variables loaded successfully.')
-        import os
-        print('MODEL_NAME from env:', os.getenv('MODEL_NAME'))  # FIXME
-
     except (ImportError, EnvironmentError) as e:
         print(e)
         exit(1)
