@@ -7,22 +7,22 @@ UV_RUN_CMD=uv run --directory $(SRC_DIR)
 
 .PHONY: all sync run test clean
 
-all: sync clean run
-
-# Freeze environment to requirements.txt
-freeze:
-	@uv pip freeze > requirements.txt
+all: clean sync run
 
 # Set up environment and build project
 sync:
 	@uv sync --no-cache
 
+# Freeze environment to requirements.txt
+freeze: sync
+	@uv pip freeze > requirements.txt
+
 # Run the app
-run:
+run: sync
 	@${UV_RUN_CMD} app.py
 
 # Test the app
-test:
+test: sync
 	@echo "No tests available currently."
 	@exit 0
 
