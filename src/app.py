@@ -75,7 +75,8 @@ def main() -> None:
         linkedin_urn = get_env_variable('LINKEDIN_AUTHOR_URN')
 
         print('Environment variables loaded successfully.')
-        print(f"Using model: {model_name}")  # FIXME
+        import os
+        print("MODEL_NAME from env:", os.getenv("MODEL_NAME"))  # FIXME
 
     except (ImportError, EnvironmentError) as e:
         print(e)
