@@ -12,4 +12,4 @@ dependencies = [
 ]
 
 [[tool.mypy.overrides]]
-ignore_missing_imports = True
+follow_untyped_imports = false
