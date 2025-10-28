@@ -9,7 +9,7 @@ def load_env() -> None:
 
     try:
         from dotenv import load_dotenv
-        load_dotenv(override=False)
+        load_dotenv(override=True)
     except ImportError as e:
         raise ImportError(
             "Missing 'python-dotenv'. \
