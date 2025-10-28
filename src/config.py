@@ -20,7 +20,8 @@ def get_env_variable(key):
     # Load .env file
     load_env()
 
-    os.environ[key] = os.getenv(key)
-    if not os.environ[key]:
+    value = os.getenv(key)
+
+    if value is None:
         raise EnvironmentError(f"Missing required environment variable: {key}")
-    return os.environ[key]
+    return value
