@@ -9,6 +9,7 @@ on:
 jobs:
   run-daily-task:
     runs-on: ubuntu-latest
+    environment: SocialMediaPost
     steps:
       # Checkout the code
       - name: Checkout code
