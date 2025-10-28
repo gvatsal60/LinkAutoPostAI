@@ -24,7 +24,7 @@ def linkedin_post_content(access_token: str, author_urn: str, message: str) -> r
     }
 
     payload = {
-        'author': f"urn:li:person:{author_urn}",
+        'author': author_urn if author_urn.startswith('urn:li:person:') else f"urn:li:person:{author_urn}",
         'lifecycleState': 'PUBLISHED',
         'specificContent': {
             'com.linkedin.ugc.ShareContent': {
