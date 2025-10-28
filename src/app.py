@@ -76,7 +76,7 @@ def main() -> None:
 
         print('Environment variables loaded successfully.')
         import os
-        print("MODEL_NAME from env:", os.getenv("MODEL_NAME"))  # FIXME
+        print('MODEL_NAME from env:', os.getenv('MODEL_NAME'))  # FIXME
 
     except (ImportError, EnvironmentError) as e:
         print(e)
