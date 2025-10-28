@@ -11,5 +11,5 @@ dependencies = [
     "types-requests>=2.32.4.20250913",
 ]
 
-[[tool.mypy.overrides]]
-follow_untyped_imports = false
+[tool.mypy]
+disable_error_code = ["import-untyped"]
