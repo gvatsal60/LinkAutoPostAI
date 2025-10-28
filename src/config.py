@@ -8,7 +8,7 @@ def load_env():
     """Load environment variables from a .env file securely."""
     try:
         from dotenv import load_dotenv
-        load_dotenv()
+        load_dotenv(override=False)
     except ImportError as e:
         raise ImportError(
             "Missing 'python-dotenv'. Install it with 'pip install python-dotenv'."
