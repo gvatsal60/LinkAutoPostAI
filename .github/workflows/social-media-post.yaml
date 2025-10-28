@@ -1,0 +1,28 @@
+name: Post on Social Media at 9 AM
+permissions:
+  pull-requests: read
+  contents: read
+on:
+  schedule:
+    - cron: '0 9 * * *' # Runs at 9 AM UTC every day
+  workflow_dispatch: # Optional, allows manual trigger from GitHub UI
+
+jobs:
+  run-daily-task:
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout the code
+      - name: Checkout code
+        uses: actions/checkout@v5
+      # Install uv tool
+      - name: Install uv
+        uses: astral-sh/setup-uv@v6
+      # Run the application
+      - name: Run App
+        env:
+          MODEL_NAME: ${{ secrets.MODEL_NAME }}
+          MODEL_API_KEY: ${{ secrets.MODEL_API_KEY }}
+          LINKEDIN_AUTHOR_URN: ${{ secrets.LINKEDIN_AUTHOR_URN }}
+          LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
+        run: |
+          make run
