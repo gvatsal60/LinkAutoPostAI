@@ -17,7 +17,7 @@ A Python-based toolkit for automatically posting links to various platforms usin
 1. **Clone the repository:**
 
    ```sh
-   git clone https://github.com/yourusername/LinkAutoPostAI.git
+   git clone https://github.com/gvatsal60/LinkAutoPostAI.git
    cd LinkAutoPostAI
    ```
 
