@@ -62,7 +62,7 @@
       }
     }
   },
-  "image": "mcr.microsoft.com/devcontainers/python",
+  "image": "mcr.microsoft.com/devcontainers/base:debian",
   "postCreateCommand": "chmod +x ${containerWorkspaceFolder}/.devcontainer/postCreateScript.sh && ${containerWorkspaceFolder}/.devcontainer/postCreateScript.sh",
   "runArgs": [
     "--rm",
