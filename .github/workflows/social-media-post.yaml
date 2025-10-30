@@ -5,7 +5,7 @@ permissions:
 on:
   #  schedule:
   #    - cron: '30 3 * * *' # codespell:ignore
-  #      Runs at 3:30 AM UTC every day (9:00 AM IST)
+  #      Runs at 3:30 am UTC every day (9:00 am IST)
   #      Temporarily disabled; re-enable when automated posting is required.
   workflow_dispatch: # Optional, allows manual trigger from GitHub UI
 jobs:
