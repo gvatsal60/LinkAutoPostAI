@@ -4,7 +4,9 @@ permissions:
   contents: read
 on:
   #  schedule:
-  #    - cron: '30 3 * * *' # codespell:ignore [Runs at 3:30 AM UTC every day (9:00 AM IST)]
+  #    - cron: '30 3 * * *' # codespell:ignore
+  #      Runs at 3:30 AM UTC every day (9:00 AM IST)
+  #      Temporarily disabled; re-enable when automated posting is required.
   workflow_dispatch: # Optional, allows manual trigger from GitHub UI
 jobs:
   run-daily-task:
