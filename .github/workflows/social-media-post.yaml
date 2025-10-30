@@ -23,7 +23,6 @@ jobs:
         env:
           MODEL_NAME: ${{ secrets.MODEL_NAME }}
           MODEL_API_KEY: ${{ secrets.MODEL_API_KEY }}
-          LINKEDIN_AUTHOR_URN: ${{ secrets.LINKEDIN_AUTHOR_URN }}
           LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
         run: |
           make run
