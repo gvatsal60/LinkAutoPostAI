@@ -18,11 +18,11 @@ def get_linkedin_author_urn(access_token: str) -> str:
         requests.HTTPError: For HTTP errors.
     """
 
-    url = "https://api.linkedin.com/v2/userinfo"
+    url = 'https://api.linkedin.com/v2/userinfo'
 
     headers = {
-        "Authorization": f"Bearer {access_token}",
-        "X-Restli-Protocol-Version": "2.0.0",
+        'Authorization': f"Bearer {access_token}",
+        'X-Restli-Protocol-Version': '2.0.0',
     }
 
     resp = requests.get(url, headers=headers, timeout=REQUEST_TIMEOUT)
@@ -51,12 +51,12 @@ def linkedin_post_content(access_token: str, message: str):
         message (str): The content of the LinkedIn post.
     """
 
-    url = "https://api.linkedin.com/v2/ugcPosts"
+    url = 'https://api.linkedin.com/v2/ugcPosts'
 
     headers = {
-        "Authorization": f"Bearer {access_token}",
-        "X-Restli-Protocol-Version": "2.0.0",
-        "Content-Type": "application/json",
+        'Authorization': f"Bearer {access_token}",
+        'X-Restli-Protocol-Version': '2.0.0',
+        'Content-Type': 'application/json',
     }
 
     author_urn = get_linkedin_author_urn(access_token=access_token)
