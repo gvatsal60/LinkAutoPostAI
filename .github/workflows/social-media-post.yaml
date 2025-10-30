@@ -4,7 +4,7 @@ permissions:
   contents: read
 on:
   #  schedule:
-  #    - cron: '0 9 * * *' # Runs at 9 AM UTC every day
+  #    - cron: '30 3 * * *' # Runs at 9 AM IST every day
   workflow_dispatch: # Optional, allows manual trigger from GitHub UI
 jobs:
   run-daily-task:
