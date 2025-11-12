@@ -20,10 +20,10 @@ langchain==1.0.3
 langchain-core==1.0.3
 langchain-google-genai==3.0.0
 langgraph==1.0.2
-langgraph-checkpoint==3.0.0
+langgraph-checkpoint==3.0.1
 langgraph-prebuilt==1.0.2
 langgraph-sdk==0.2.9
-langsmith==0.4.39
+langsmith==0.4.42
 load-dotenv==0.1.0
 orjson==3.11.4
 ormsgpack==1.11.0
