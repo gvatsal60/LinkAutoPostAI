@@ -43,7 +43,7 @@ def get_linkedin_author_urn(access_token: str) -> str:
     return _author_urn
 
 
-def linkedin_post_content(access_token: str, message: str):
+def linkedin_post_content(access_token: str, message: str) -> None:
     """
     Post generated content to LinkedIn.
     Args:
