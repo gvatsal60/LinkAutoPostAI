@@ -23,7 +23,7 @@ langgraph==1.0.4
 langgraph-checkpoint==3.0.1
 langgraph-prebuilt==1.0.5
 langgraph-sdk==0.2.14
-langsmith==0.4.43
+langsmith==0.4.56
 load-dotenv==0.1.0
 orjson==3.11.5
 ormsgpack==1.12.0
