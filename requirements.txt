@@ -33,7 +33,7 @@ protobuf==6.33.5
 pyasn1==0.6.2
 pyasn1-modules==0.4.2
 pydantic==2.12.5
-pydantic-core==2.41.5
+pydantic-core==2.42.0
 python-dotenv==1.2.1
 pyyaml==6.0.3
 requests==2.32.5
