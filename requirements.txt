@@ -17,7 +17,7 @@ idna==3.11
 jsonpatch==1.33
 jsonpointer==3.0.0
 langchain==1.2.10
-langchain-core==1.2.18
+langchain-core==1.2.19
 langchain-google-genai==4.2.1
 langgraph==1.0.10
 langgraph-checkpoint==4.0.1
