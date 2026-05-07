@@ -1,6 +1,7 @@
-'''
+"""
 Configuration module for loading environment variables securely.
-'''
+"""
+
 import os
 
 
@@ -9,6 +10,7 @@ def load_env() -> None:
 
     try:
         from dotenv import load_dotenv
+
         load_dotenv(override=True)
     except ImportError as e:
         raise ImportError(

@@ -6,6 +6,7 @@ import requests
 
 REQUEST_TIMEOUT = 10  # seconds
 
+
 def get_linkedin_author_urn(access_token: str) -> str:
     """
     Retrieve the LinkedIn author's URN using the access token.
@@ -66,15 +67,12 @@ def linkedin_post_content(access_token: str, message: str):
         'lifecycleState': 'PUBLISHED',
         'specificContent': {
             'com.linkedin.ugc.ShareContent': {
-                'shareCommentary': {
-                    'text': message
-                },
-                'shareMediaCategory': 'NONE'
+                'shareCommentary': {'text': message},
+                'shareMediaCategory': 'NONE',
             }
         },
-        'visibility': {'com.linkedin.ugc.MemberNetworkVisibility': 'PUBLIC'}
+        'visibility': {'com.linkedin.ugc.MemberNetworkVisibility': 'PUBLIC'},
     }
 
-    resp = requests.post(url, headers=headers,
-                         json=payload, timeout=REQUEST_TIMEOUT)
+    resp = requests.post(url, headers=headers, json=payload, timeout=REQUEST_TIMEOUT)
     resp.raise_for_status()  # Raises an HTTPError for bad status codes

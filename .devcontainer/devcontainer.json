@@ -63,7 +63,8 @@
   "image": "mcr.microsoft.com/devcontainers/base:debian",
   "postCreateCommand": "chmod +x ${containerWorkspaceFolder}/.devcontainer/postCreateScript.sh && ${containerWorkspaceFolder}/.devcontainer/postCreateScript.sh",
   "runArgs": [
-    "--rm",
-    "--name=vsc-${localEnv:USER}-${containerWorkspaceFolderBasename}-${devcontainerId}"
+    "--name=vsc-${localEnv:USER}-${containerWorkspaceFolderBasename}-${devcontainerId}",
+    "--pull=always",
+    "--rm"
   ]
 }
