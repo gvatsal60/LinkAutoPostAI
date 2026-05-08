@@ -3,8 +3,9 @@ permissions:
   pull-requests: read
   contents: read
 on:
-  schedule:
-    - cron: '0 9 * * *' # Runs at 9 AM UTC every day
+  #  schedule:
+  #    - cron: '30 3 * * *' # codespell:ignore; Runs at 3:30 AM UTC every day (9:00 AM IST)
+  #      Temporarily disabled; re-enable when automated posting is required.
   workflow_dispatch: # Optional, allows manual trigger from GitHub UI
 jobs:
   run-daily-task:
@@ -13,16 +14,15 @@ jobs:
     steps:
       # Checkout the code
       - name: Checkout code
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       # Install uv tool
       - name: Install uv
-        uses: astral-sh/setup-uv@v6
+        uses: astral-sh/setup-uv@08807647e7069bb48b6ef5acd8ec9567f424441b
       # Run the application
       - name: Run App
         env:
           MODEL_NAME: ${{ secrets.MODEL_NAME }}
           MODEL_API_KEY: ${{ secrets.MODEL_API_KEY }}
-          LINKEDIN_AUTHOR_URN: ${{ secrets.LINKEDIN_AUTHOR_URN }}
           LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
         run: |
           make run

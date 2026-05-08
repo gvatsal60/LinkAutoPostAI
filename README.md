@@ -1,19 +1,23 @@
-# ⚡️ GenAI Starter Kit
+# 🔗 LinkAutoPostAI
 
-[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://github.com/gvatsal60/GenAIStarterKit/blob/HEAD/LICENSE)
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=gvatsal60_GenAIStarterKit&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=gvatsal60_GenAIStarterKit)
-[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/gvatsal60/GenAIStarterKit/master.svg)](https://results.pre-commit.ci/latest/github/gvatsal60/GenAIStarterKit/HEAD)
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/8eaddb15db414c6d8508d09edf485629)](https://app.codacy.com/gh/gvatsal60/GenAIStarterKit/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
-[![CodeFactor](https://www.codefactor.io/repository/github/gvatsal60/genaistarterkit/badge)](https://www.codefactor.io/repository/github/gvatsal60/genaistarterkit)
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
+[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/gvatsal60/LinkAutoPostAI/master.svg)](https://results.pre-commit.ci/latest/github/gvatsal60/LinkAutoPostAI/HEAD)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/90a56eff45db425b98f356d5e7e710be)](https://app.codacy.com/gh/gvatsal60/LinkAutoPostAI/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=gvatsal60_LinkAutoPostAI&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=gvatsal60_LinkAutoPostAI)
+[![CodeFactor](https://www.codefactor.io/repository/github/gvatsal60/linkautopostai/badge)](https://www.codefactor.io/repository/github/gvatsal60/linkautopostai)
+![GitHub pull-requests](https://img.shields.io/github/issues-pr/gvatsal60/LinkAutoPostAI)
+![GitHub Issues](https://img.shields.io/github/issues/gvatsal60/LinkAutoPostAI)
+![GitHub forks](https://img.shields.io/github/forks/gvatsal60/LinkAutoPostAI)
+![GitHub stars](https://img.shields.io/github/stars/gvatsal60/LinkAutoPostAI)
 
-Welcome to the **GenAI Starter Kit**! This template helps you kickstart your Generative AI application development with a modern, Python-based stack.
+A Python-based toolkit for automatically posting links to various platforms using AI-powered logic. It helps streamline content sharing, automate workflows, and integrate with your favorite services.
 
 ## 🚀 Features
 
-- Minimal, ready-to-extend project structure
-- Python 3.13+ support
+- Automated link posting to supported platforms(**LinkedIn** as of now)
+- AI-driven content selection and scheduling
+- Easy configuration and extensibility
 - Pre-configured for best practices (linting, formatting, CI)
-- Easy dependency management with `pyproject.toml`
 - Example documentation and contribution guidelines
 
 ## 🛠️ Quick Start
@@ -21,29 +25,26 @@ Welcome to the **GenAI Starter Kit**! This template helps you kickstart your Gen
 1. **Clone the repository:**
 
    ```sh
-   git clone https://github.com/gvatsal60/GenAIStarterKit.git
-   cd GenAIStarterKit
+   git clone https://github.com/gvatsal60/LinkAutoPostAI.git
+   cd LinkAutoPostAI
    ```
 
 2. **Set up your environment:**
 
    ```sh
-   python3.13 -m venv .venv
-   source .venv/bin/activate
-   pip install -e .
+   uv sync
    ```
 
-3. **Start building your GenAI app!**
+3. **Configure your posting settings and start automating!**
 
 ## 📦 Project Structure
 
 ```tree
-genai-starter-kit/
-├── src/                  # Your source code
+LinkAutoPostAI/
+├── src/                  # Source code for LinkAutoPostAI
 ├── tests/                # Unit tests
 ├── README.md
 ├── pyproject.toml
-├── .gitignore
 ├── LICENSE
 └── ...
 ```
