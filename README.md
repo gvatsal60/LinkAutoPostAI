@@ -10,13 +10,13 @@
 ![GitHub forks](https://img.shields.io/github/forks/gvatsal60/LinkAutoPostAI)
 ![GitHub stars](https://img.shields.io/github/stars/gvatsal60/LinkAutoPostAI)
 
-A Python-based toolkit for automatically posting links to various platforms using AI-powered logic. It helps streamline content sharing, automate workflows, and integrate with your favorite services.
+A Python automation project that generates LinkedIn post content with Google GenAI via LangChain and publishes it using the LinkedIn API.
 
 ## 🚀 Features
 
-- Automated link posting to supported platforms(**LinkedIn** as of now)
-- AI-driven content selection and scheduling
-- Easy configuration and extensibility
+- AI-generated LinkedIn post content
+- Automated publishing to LinkedIn
+- Environment-variable based configuration
 - Pre-configured for best practices (linting, formatting, CI)
 - Example documentation and contribution guidelines
 
@@ -35,15 +35,38 @@ A Python-based toolkit for automatically posting links to various platforms usin
    uv sync
    ```
 
-3. **Configure your posting settings and start automating!**
+3. **Create your environment file:**
+
+   ```sh
+   cp src/.env.dev src/.env
+   ```
+
+4. **Update `src/.env` with required values:**
+
+   ```env
+   MODEL_API_KEY=your_model_api_key
+   MODEL_NAME=gemini-2.5-flash
+   LINKEDIN_ACCESS_TOKEN=your_linkedin_access_token
+   ```
+
+5. **Run the app:**
+
+   ```sh
+   make run
+   ```
 
 ## 📦 Project Structure
 
 ```tree
 LinkAutoPostAI/
-├── src/                  # Source code for LinkAutoPostAI
-├── tests/                # Unit tests
+├── src/                  # Application source code
+│   ├── app.py            # Main entrypoint
+│   ├── linkedin.py       # LinkedIn API integration
+│   ├── config.py         # Environment variable loading
+│   └── .env.dev          # Environment variable template
+├── snippets/             # Sample snippets/assets
 ├── README.md
+├── Makefile
 ├── pyproject.toml
 ├── LICENSE
 └── ...
