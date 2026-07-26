@@ -4,8 +4,6 @@ on:
     types: [opened]
 jobs:
   call-auto-merge:
-    uses: gvatsal60/.github/.github/workflows/bot-pr-auto-approve-merge.yaml@master
+    uses: gvatsal60/.github/.github/workflows/bot-pr-auto-approve-merge.yaml@479b5d9df07f3e1fc7e8355595fbb7689189b17d
     permissions:
       pull-requests: write
-      contents: write
-    secrets: inherit
