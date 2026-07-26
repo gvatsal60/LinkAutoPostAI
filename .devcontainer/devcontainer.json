@@ -18,11 +18,9 @@
         "bradzacher.vscode-copy-filename",
         "charliermarsh.ruff",
         "docker.docker",
-        "ms-azuretools.vscode-containers",
+        "meta.pyrefly",
         "ms-python.isort",
-        "ms-python.pylint",
         "ms-python.python",
-        "ms-python.vscode-pylance",
         "streetsidesoftware.code-spell-checker",
         "usernamehw.errorlens"
       ],
