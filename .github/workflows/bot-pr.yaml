@@ -5,4 +5,4 @@ permissions:
   pull-requests: write
 jobs:
   call-auto-merge:
-    uses: gvatsal60/.github/.github/workflows/bot-pr-auto-approve-merge.yaml@479b5d9df07f3e1fc7e8355595fbb7689189b17d
+    uses: gvatsal60/.github/.github/workflows/bot-pr-auto-approve-merge.yaml@08d0834f1b687dbab5353c7fb066d6b938699609
