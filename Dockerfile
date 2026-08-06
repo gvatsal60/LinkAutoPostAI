@@ -1,7 +1,6 @@
 # ##########################################################################
 # File: Dockerfile
 # Author: Vatsal Gupta (gvatsal60)
-# Date: 26-Sep-2025
 # Description: Dockerfile for a GenAI application.
 # ##########################################################################
 
@@ -15,10 +14,12 @@
 # ##########################################################################
 # Base Image
 # ##########################################################################
-FROM python:3.14-alpine
+FROM ghcr.io/astral-sh/uv:python3.12-alpine
 
 RUN addgroup -S nonroot \
   && adduser -S nonroot -G nonroot
+
+USER nonroot
 
 # ##########################################################################
 # Maintainer
@@ -33,15 +34,14 @@ WORKDIR /app
 # ##########################################################################
 # Copy Files
 # ##########################################################################
-COPY src/ ./src/
-COPY requirements.txt ./
+COPY pyproject.toml ./
+COPY uv.lock ./
+COPY src/ ./
 
-RUN pip3 install --no-cache-dir -r requirements.txt
-
-USER nonroot
+RUN uv sync --no-cache
 
 # ##########################################################################
 # Command to Run
 # ##########################################################################
 # For standard Python applications
-ENTRYPOINT [ "python" , "src/app.py" ]
+ENTRYPOINT [ "uv" , "run" , "app.py" ]
