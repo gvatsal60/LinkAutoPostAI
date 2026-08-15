@@ -1,32 +1,29 @@
-# Makefile for managing the project
-# include .env
-# export
+.PHONY: help all sync freeze run test clean
+.DEFAULT_GOAL := help
 
 SRC_DIR := src
 UV_RUN_CMD=uv run --directory $(SRC_DIR)
 
-.PHONY: all sync run test clean
+help: ## Show this help message
+	@echo "Usage: make <target>"
+	@echo
+	@sed -n 's/^\([a-zA-Z_-]*\):.*##\(.*\)/\1:\2/p' $(MAKEFILE_LIST) | sort | awk -F: '{printf "  %-15s %s\n", $$1, $$2}'
 
-all: clean sync run
+all: clean sync run ## Run full pipeline: clean, sync, and run
 
-# Set up environment and build project
-sync:
+sync: ## Set up environment and sync dependencies
 	@uv sync --no-cache
 
-# Freeze environment to requirements.txt
-freeze: sync
+freeze: sync ## Freeze environment to requirements.txt
 	@uv pip freeze > requirements.txt
 
-# Run the app
-run: sync
+run: sync ## Run the app
 	@${UV_RUN_CMD} app.py
 
-# Test the app
-test: sync
+test: sync ## Run tests
 	@echo "No tests available currently."
 	@exit 0
 
-# Clean environment and remove .venv
-clean:
+clean: ## Clean environment and remove .venv
 	@uv clean
 	@rm -rf .venv
