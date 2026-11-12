@@ -32,7 +32,7 @@ A Python automation project that generates LinkedIn post content with Google Gen
 2. **Set up your environment:**
 
    ```sh
-   uv sync
+   uv sync --no-cache --quiet
    ```
 
 3. **Create your environment file:**

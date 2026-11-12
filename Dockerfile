@@ -38,7 +38,7 @@ COPY pyproject.toml ./
 COPY uv.lock ./
 COPY src/ ./
 
-RUN uv sync --no-cache
+RUN uv sync --no-cache --quiet
 
 # ##########################################################################
 # Command to Run
