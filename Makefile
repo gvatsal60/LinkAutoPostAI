@@ -18,7 +18,7 @@ all: clean sync run ## Build and run the app
 
 # Set up environment and build project
 sync: ## Sync dependencies
-	@uv sync --no-cache
+	@uv sync --no-cache --quiet
 
 # Freeze environment to requirements.txt
 freeze: sync ## Freeze dependencies to requirements.txt
@@ -35,5 +35,5 @@ test: sync ## Run tests
 
 # Clean environment and remove .venv
 clean: ## Clean environment
-	@uv clean
+	@uv clean --quiet --force
 	@rm -rf .venv
